@@ -1,0 +1,39 @@
+<form class="ui form" [formGroup]="paymentForm">
+    <div class="fields">
+      <div class="seven wide field" [ngClass]="{'error': hasCardNumberErrors}">
+        <label for="cardnumber">Card Number</label>
+        <input type="text" id="cardnumber" name="cardnumber" maxlength="16" placeholder="Card #" formControlName="cardnumber">
+      </div>
+      <div class="three wide field" [ngClass]="{'error': hasCvcErrors}">
+        <label for="cvc">CVC</label>
+        <input type="text" name="cardcvc" id="cvc" maxlength="3" placeholder="CVC" formControlName="cvc">
+      </div>
+      <div class="six wide field">
+        <label for="expiration">Expiration</label>
+        <div class="two fields">
+          <div class="field" [ngClass]="{'error': hasMonthErrors}">
+            <select class="ui fluid search dropdown" name="card-expire-month" id="expiration" formControlName="month">
+              <option value="">Month</option>
+              <option value="1">January</option>
+              <option value="2">February</option>
+              <option value="3">March</option>
+              <option value="4">April</option>
+              <option value="5">May</option>
+              <option value="6">June</option>
+              <option value="7">July</option>
+              <option value="8">August</option>
+              <option value="9">September</option>
+              <option value="10">October</option>
+              <option value="11">November</option>
+              <option value="12">December</option>
+            </select>
+          </div>
+          <div class="field" [ngClass]="{'error': hasYearErrors}">
+            <input type="text" name="card-expire-year" maxlength="4" placeholder="Year" formControlName="year">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <input type="submit" value="Save" hidden id="save-form">
+</form>

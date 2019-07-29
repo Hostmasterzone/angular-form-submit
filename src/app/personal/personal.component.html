@@ -1,0 +1,23 @@
+<form class="ui form" novalidate [formGroup]="personalForm">
+    <div class="two fields">
+        <div class="field" [ngClass]="{'error': hasFirstNameErrors}">
+            <label for="firstname">First Name</label>
+            <input type="text" id="firstname" name="first-name" placeholder="First Name" formControlName="firstName">
+        </div>
+        <div class="field" [ngClass]="{'error': hasLastNameErrors}">
+            <label for="lastname">Last Name</label>
+            <input type="text" id="lastname" name="last-name" placeholder="Last Name" formControlName="lastName">
+        </div>
+    </div>
+    <div class="two fields">
+        <div class="field" [ngClass]="{'error': hasEmailErrors}">
+            <label for="email" [ngClass]="{'error': hasFirstNameErrors}">Email</label>
+            <input type="email" id="email" name="email-name" placeholder="abc@def.co" formControlName="email">
+        </div>
+        <div class="field" [ngClass]="{'error': hasPhoneErrors}">
+            <label for="phone">Phone</label>
+            <input type="number" id="phone" name="phone-name" placeholder="000 000 0000" formControlName="phone">
+        </div>
+    </div>
+    <input type="submit" value="Save" hidden id="save-form">
+</form>
