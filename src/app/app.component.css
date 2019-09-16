@@ -2,3 +2,18 @@
     margin-top: 2rem;
     display: block;
 }
+.ui.protected.segment{
+    user-select: none;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+.ui.protected.segment::before{
+    content: " ";
+    display: block;
+    background-color: #00000040;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    margin: -1em;
+}

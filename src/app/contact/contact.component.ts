@@ -5,7 +5,7 @@ import { AppFormGroup } from '../shared/directives/form-group.class';
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  changeDetection : ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ContactComponent implements OnInit {
 
@@ -15,10 +15,10 @@ export class ContactComponent implements OnInit {
 
   ngOnInit() {
     this.contactForm = this.fb.group({
-      address : ['', Validators.required],
-      apt : [''],
-      state : ['', Validators.required],
-      zip : ['', Validators.required]
+      address: ['', Validators.required],
+      apt: [''],
+      state: ['', Validators.required],
+      zip: ['', Validators.required]
     });
   }
 
@@ -44,6 +44,13 @@ export class ContactComponent implements OnInit {
 
   private isFormFieldValid(formControl: AbstractControl): boolean {
     return (this.contactForm.submitted || formControl.touched) && formControl.invalid;
+  }
+
+  handleFormSubmit() {
+    if (this.contactForm.invalid) {
+      return;
+    }
+    // Pass the form value to API for saving data
   }
 
 }

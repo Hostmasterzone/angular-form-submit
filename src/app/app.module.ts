@@ -8,6 +8,9 @@ import { PersonalComponent } from './personal/personal.component';
 import { ContactComponent } from './contact/contact.component';
 import { PaymentComponent } from './payment/payment.component';
 import { AppFormGroupDirective } from './shared/directives/form-group.directive';
+import { CanAccessDirective } from './shared/directives/can-access.directive';
+import { AuthService } from './shared/auth.service';
+import { RuleEngineService } from './shared/rule-engine.service';
 
 @NgModule({
   declarations: [
@@ -15,14 +18,15 @@ import { AppFormGroupDirective } from './shared/directives/form-group.directive'
     PersonalComponent,
     ContactComponent,
     PaymentComponent,
-    AppFormGroupDirective
+    AppFormGroupDirective,
+    CanAccessDirective
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [AuthService, RuleEngineService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

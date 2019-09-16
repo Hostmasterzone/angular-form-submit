@@ -1,4 +1,4 @@
-<form class="ui form" [formGroup]="contactForm">
+<form class="ui form" [formGroup]="contactForm" (ngSubmit)="handleFormSubmit()">
     <div class="field">
         <label for="address-field">Primary Address</label>
         <div class="fields">
